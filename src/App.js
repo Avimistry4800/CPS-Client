@@ -12,6 +12,7 @@ import AddReview from "./Components/Dashboard/AddReview/AddReview";
 import MakeAdmin from "./Components/Dashboard/MakeAdmin/MakeAdmin";
 import OrderList from "./Components/Dashboard/OrderList/OrderList";
 import ManageService from "./Components/Dashboard/ManageService/ManageService";
+import About from "./Components/About/About";
 
 
 
@@ -35,6 +36,9 @@ function App() {
         </Route>
         <Route  path="/login">
           <Login/>
+        </Route>
+        <Route  path="/about">
+          <About/>
         </Route>
         
         <PrivateRoute path="/service/:id">
@@ -61,12 +65,10 @@ function App() {
         <PrivateRoute path="/orderList">
           <OrderList />
         </PrivateRoute>
-        <Route path="/manageService">
-          <ManageService />
-        </Route>
-        {/* <PrivateRoute path="/manageService">
+        
+        <PrivateRoute path="/manageService">
           <ManageService/>
-        </PrivateRoute> */}
+        </PrivateRoute>
       </Switch>
     </Router>
 

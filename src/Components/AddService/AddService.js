@@ -25,7 +25,7 @@ const AddService = () => {
         formData.append('name', services.name);
         formData.append('price', services.price);
         formData.append('desc', services.description);
-        fetch('http://localhost:5000/addService', {
+        fetch('https://polar-scrubland-16805.herokuapp.com/addService', {
             method: "POST",
             body: formData,
         })
@@ -38,6 +38,7 @@ const AddService = () => {
             }).catch(err => {
                 console.log(err);
             })
+           
     }
 
     return (

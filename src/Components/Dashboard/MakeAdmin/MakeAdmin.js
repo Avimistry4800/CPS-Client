@@ -12,7 +12,7 @@ const MakeAdmin = () => {
     }
     const handleSubmit = e =>{
         e.preventDefault()
-        const url = 'http://localhost:5000/addAdmin'
+        const url = 'https://polar-scrubland-16805.herokuapp.com/addAdmin'
         fetch(url, {
             method: 'POST',
             headers: {
@@ -37,7 +37,7 @@ const MakeAdmin = () => {
                     <form onSubmit={handleSubmit}>
                         <h1 className="text-gray-600 text-2xl text-center mb-5">Add New Admin</h1>
                         <div >
-                        <label className=" ">Admin User Email</label> <br />
+                        <label className="">Admin User Email</label> <br />
                             <input type="text" className="rounded-lg border border-gray-300 px-4 my-5 h-12" onBlur={handleBlur} name="email" required="" />
                             
                         </div>

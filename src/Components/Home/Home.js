@@ -2,6 +2,7 @@
 import React from 'react';
 import About from '../About/About';
 import AddService from '../AddService/AddService';
+import Contact from '../Contact/Contact';
 import DedicatedSection from '../DedicatedSection/DedicatedSection';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
@@ -16,6 +17,7 @@ const Home = () => {
       <About />
       <Services />
         <Review />
+        <Contact />
       <Footer />
   
         </>

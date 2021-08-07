@@ -19,7 +19,7 @@ const AddReview = () => {
             rating: data.rating,
             imageURL: imageURL
         };
-        const url = 'http://localhost:5000/addReview'
+        const url = 'https://polar-scrubland-16805.herokuapp.com/addReview'
         fetch(url, {
             method: 'POST',
             headers: {
@@ -27,7 +27,16 @@ const AddReview = () => {
             },
             body: JSON.stringify(reviewData)
         })
-            .then(res => console.log('server side response', res))
+      
+        .then(data => {
+          if (data) {
+              console.log(data);
+              alert("Service added successfully")
+          }
+      }).catch(err => {
+          console.log(err);
+      })
+            
     };
 
     const handleImageUpload = event => {

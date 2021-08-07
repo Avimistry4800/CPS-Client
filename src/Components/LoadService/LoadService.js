@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 const LoadService = ({ service }) => {
     console.log(service)
     const { name, price , desc, id} = service;
+
     const history =useHistory();
    const handleBooking = (id) => {
     const url = `/service/${id}`;

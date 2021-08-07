@@ -10,7 +10,7 @@ const ManageService = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://polar-scrubland-16805.herokuapp.com/services')
             .then(res => res.json())
             .then(data => {
                 setManageService(data);
@@ -20,7 +20,7 @@ const ManageService = () => {
 
     const handleDelete = id =>
     {
-       id && fetch(`http://localhost:5000/services/${ id }`, {
+       id && fetch(`https://polar-scrubland-16805.herokuapp.com/services/${ id }`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json'
