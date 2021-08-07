@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Nabvar from '../Navbar/Nabvar';
 
 const AddService = () => {
 
@@ -44,7 +45,8 @@ const AddService = () => {
     return (
 
         <div className = "container mx-auto bg-blue-100 rounded-lg">
-          
+          <div className = "bg-purple-600"><Nabvar /></div>
+          <p className = "text-3xl text-gray-600 text-center py-5 pt-10">Add a Service</p>
             
             <div className="mt-5 md:mt-0 ">
               <form onSubmit={handleSubmit} method="POST">
