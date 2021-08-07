@@ -47,7 +47,7 @@ const SimpleCardForm = ({ newService }) => {
                 style: {
                   base: {
                     fontSize: '16px',
-                    color: '#424770',
+                    color: '#282a3b',
                     '::placeholder': {
                       color: '#aab7c4',
                     },
@@ -57,7 +57,7 @@ const SimpleCardForm = ({ newService }) => {
                   },
                 },
               }}/>
-            <button className="w-48 bg-gray-500 px-5 py-2"  type="submit" disabled={!stripe}>
+            <button className="w-48 bg-purple-600 rounded-lg text-white px-5 py-2 my-5"  type="submit" disabled={!stripe}>
                 Pay
       </button>
         </form>

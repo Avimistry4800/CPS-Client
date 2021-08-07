@@ -78,7 +78,7 @@ const Contact = () => {
                       type="text"
                       name="subject"
                       className=" form-control border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                      placeholder="Subject"
+                      placeholder="Sugitddbject"
                       style={{ transition: "all .15s ease" }}
                     />
                   </div>

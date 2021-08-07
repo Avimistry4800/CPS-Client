@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { UserContext } from "../../../App";
+import Nabvar from "../../Navbar/Nabvar";
 import PaymentProcess from "../PaymentProcess/PaymentProcess";
 import Sidebar from "../Sidebar/Sidebar";
 
@@ -31,29 +32,41 @@ const Booking = () => {
     setServiceInfo(newService);
 };
     return (
-        <div className="row">
-            <div className="col-md-2 col-sm-6 col-12">
+        <div className="flex justify">
+            <div className=" w-1/3   ">
                 <Sidebar />
             </div>
-            <div className="col-md-5 col-sm-12 col-12 d-flex justify-center mt-5 pt-5 pb-5">
-                <div class="login-box">
+            <div className="container w-2/3 md:w-full">
+                <div>
+                <div className="bg-purple-600 ">
+                   <Nabvar />
+               </div>
+                </div>
+            <div className="flex justify-center pl-10 items-center py-10 md:py-40  bg-purple-200 w-full">
+                <div class="mx-auto  ">
                     <form>
-                        <h1 className="text-secondary mb-5">Booking Item</h1>
-                        <div class="user-box">
-                            <input value={loggedInUser.userName} onBlur={handleBlur} type="text" required="" />
-                            <label>Username</label>
+                        <h1 className="text-gray-600 text-2xl font-bold ">Booking Item Payment</h1>
+                        <div class="py-5">
+                        <label className="text-lg  mb-5 text-gray-500 ">Username</label> <br/>
+                            <input value={loggedInUser.userName} onBlur={handleBlur} type="text" className="my-4  py-2 border border-gray-200 rounded-lg" />
+                           
                         </div>
-                        <div class="user-box">
-                            <input type="text" name="service" required="" value={serviceData.name}/>
-                            <label>Service Name</label>
+                        <div class="">
+                        <label className="text-lg  mb-5 text-gray-500 ">Service Name</label> <br/>
+                            <input type="text" name="service" required="" value={serviceData.name} className="my-4 py-2 border border-gray-200 rounded-lg"/>
+                            
                         </div>
-                        <div class="user-box">
-                            <input value={serviceData.price} type="text" name="price" required="" />
-                            <label>Price</label>
+                        <div class="py-4">
+                        <label className="text-lg  mb-5 text-gray-500 ">Price</label> <br/>
+                            <input value={serviceData.price} type="text" name="price" required="" className="my-4 py-2 border border-gray-200 rounded-lg"/>
+                            
                         </div>
                         
                     </form>
+                        <div className="my-3">
                         <PaymentProcess newService={newService}/>
+                        </div>
+                </div>
                 </div>
             </div>
         </div>

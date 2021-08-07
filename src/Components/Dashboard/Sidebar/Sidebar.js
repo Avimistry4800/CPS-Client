@@ -6,7 +6,7 @@ const Sidebar = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [isAdmin, setIsAdmin] = useState(false);
     useEffect(() => {
-        const url = "http://localhost5000/isAdmin";
+        const url = "https://polar-scrubland-16805.herokuapp.com/isAdmin";
         fetch(url, {
             method: "POST",
             headers: {
@@ -15,43 +15,45 @@ const Sidebar = () => {
             body: JSON.stringify({ email: loggedInUser.email }),
         })
             .then((res) => res.json())
-            .then((data) => setIsAdmin(data));
+            .then((data) => {setIsAdmin(data)
+            console.log(data)});
+            
     }, []);
   
 
 
     return (
-        <div className="flex flex-col w-64 h-auto px-4 py-8 bg-white border-r dark:bg-gray-800 dark:border-gray-600">
+        <div className="flex flex-col w-20 md:w-72 h-auto px-4 pt-8 bg-white  dark:bg-gray-800 dark:border-gray-600">
           <div className="flex flex-col justify-between flex-1 mt-6">
             <nav>
             {isAdmin ? ( 
                 <div>
                     <Link to="/home" className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700">
-                     <span className="mx-4 pl-5 font-medium">Home</span>
+                     <span className="lg:mx-4 lg:pl-5 font-medium">Home</span>
                     </Link>
                     <Link to="/orderList" className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700">
-                     <span className="mx-4 pl-5 font-medium">Order List</span>
+                     <span className="lg:mx-4 lg:pl-5 font-medium">Order List</span>
                     </Link>
                     <Link to="/addService" className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700">
-                     <span className="mx-4 pl-5 font-medium">Add Service</span>
+                     <span className="lg:mx-4 lg:pl-5 font-medium">Add Service</span>
                     </Link>
                     <Link to="/makeAdmin" className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700">
-                     <span className="mx-4 pl-5 font-medium">Make Admin</span>
+                     <span className="lg:mx-4 lg:pl-5 font-medium">Make Admin</span>
                     </Link>
                     <Link to="/manageService" className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700">
-                     <span className="mx-4 pl-5 font-medium">Manage Service</span>
+                     <span className="lg:mx-4 lg:pl-5 font-medium">Manage Service</span>
                     </Link>
                     </div> 
                     ) : (
                         <div>
                     <Link to="/service/:id" className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700">
-                     <span className="mx-4 pl-5 font-medium">Payment</span>
+                     <span className="lg:mx-4 lg:pl-5 font-medium">Payment</span>
                     </Link>
                     <Link to="/bookingList" className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700">
-                     <span className="mx-4 pl-5 font-medium">Booking List</span>
+                     <span className="lg:mx-4 lg:pl-5 font-medium">Booking List</span>
                     </Link>
                     <Link to="/addReview" className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700">
-                     <span className="mx-4 pl-5 font-medium">Add Review</span>
+                     <span className="lg:mx-4 lg:pl-5 font-medium">Add Review</span>
                     </Link>
                     </div>
                     )}

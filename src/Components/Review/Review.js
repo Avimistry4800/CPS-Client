@@ -11,19 +11,7 @@ const Review = () => {
         .then(data=> setReviewData(data))
     },[])
     return (
-        // <section className=" mx-auto">
-        //     <div className="text-center mt-5">
-        //         <p className="text-2xl font-bold text-gray-600">REVIEWS</p>
-        //         <p className="text-gray-500 text-xl ">Our Most Valuable Review</p>
-                
-        //             <div className="grid grid-cols-1 gap-x-2 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
-        //                 {
-        //                     reviewData.map(review => <ReviewDetails review={review}></ReviewDetails>)
-        //                 }
-        //             </div>
-                
-        //     </div>
-        // </section>
+       
          <section className="py-6 sm:py-12 bg-coolGray-100 text-coolGray-800">
          <div className="container p-6 mx-auto space-y-8">
              <div className="space-y-2 text-center">
